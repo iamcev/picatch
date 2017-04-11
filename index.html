@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+		<title>Picatch!</title>
+		<link rel="shortcut icon" href="https://docs.google.com/a/fcpsschools.net/drawings/d/19wBBoA2lCJZJi_6OP_yOlpqoLuhhkSUV4NX7KPH4rFs/pub?w=166&h=165">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+		<style>
+			body {
+			font-family:"Roboto",sans-serif;
+			margin:0; 
+			}
+			select{
+			background-color:#f4c20d;
+			border:1px solid #f4c20d;
+			}
+			select:hover{
+			box-shadow:2px 3px 3px gray;
+			animation-name:textareahover;
+			animation-duration:4s;
+			}
+			@keyframes textareahover{
+			from {background-color:white; border:2px solid white;}
+			to {background-color:#f4c20d; border:2px solid #f4c20d;}
+			}
+			textarea{
+			color:#f4c20d;
+			background-color:white;
+			border: 2px solid white;
+			transition: width 2s, height 4s;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15),
+			0 0 0 1px rgba(0,0,0,0.15);
+			margin:10px;
+			}
+			textarea:hover{
+			box-shadow:2px 3px 3px gray;
+			animation-name:textareahover;
+			animation-duration:1s;
+			animation-direction:alternate;
+			width:300px;
+			height:75px;
+			}
+			input{
+			border:2px solid #f4c20d;
+			background-color:#f4c20d;
+			color:white;
+			border-radius:2px;
+			padding:3px;
+			font-size:100% 
+			}
+			input:hover {
+			box-shadow:2px 3px 3px gray;
+			rotate(20deg);
+			}
+			.card {
+			background-color:white; 
+			width: 10em;
+			border: none;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15),
+			0 0 0 1px rgba(0,0,0,0.15); 
+			padding: 16px;
+			border-radius: 2px;
+			}
+			button {
+			box-shadow:0 2px 2px 0 rgba(0,0,0,0.15);
+			background-color: #FFB300;
+			border:none;
+			border-radius:2px;
+			color: white;
+			padding: 7px;
+			transition:box-shadow 0.2s;
+			margin:16px;
+			}
+			button:hover {
+			box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+			animation-name:textareahover;
+			animation-duration:4s;
+			}
+			card {
+			background-color:white; 
+			width:10em;
+			border:none;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.15); 
+			padding: 16px;
+			border-radius: 2px;
+			margin:16px;
+			display:block;
+			transition:box-shadow 0.2s;
+			}
+			card:hover {
+			box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 2px rgba(0,0,0,.16);
+			}
+			header {
+			background-color:#FFC107;
+			margin:0;
+			}
+			nav {
+			background-color:#FFA000;
+			max-width:100%;
+			height:56px;
+			color:white;
+			padding-left:16px;
+			padding-right:16px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+			position:fixed;
+			margin:0;
+			width:100%!important;
+			border:none;
+			}
+			nav span {
+			display:inline;
+			padding:20px 0 20px 0;
+			font-size:123%;
+			vertical-align:middle;
+			}
+			nav .menu-icon {
+			padding:16px 16px 16px 0;
+			width:24px;
+			vertical-align:middle;
+			margin-right:16px;
+			}
+			nav .menu-icon2 {
+			padding:16px 16px 16px 0;
+			width:24px;
+			vertical-align:middle;
+			margin-right:16px;
+			float:center;
+			}
+			nav .more-icon {
+			padding: 16px;
+			width:24px;
+			float:right;
+			margin:16px;
+			margin-top:0;
+			}
+			.second-icon {
+			margin-right:0!important;
+			padding-right:0!important;
+			}
+			float-action-button {
+			height:56px;
+			background-color:#0091EA;
+			width:56px;
+			margin:16px;
+			z-index:1;
+			border-radius:50%!important;
+			display:block;
+			right:8px!important;
+			bottom:8px!important;
+			position:fixed!important;
+			box-shadow:0 2px 10px rgba(0,0,0,0.15);
+			cursor:pointer!important;
+			user-select:none;
+			}
+			float-action-button i {
+			display:inline;
+			width:24px;
+			vertical-align:middle;
+			margin:16px;
+			color:white;
+			}
+			.question{
+			border-radius=50%
+			}
+			</style>
+		<script type="text/javascript">
+		var card = document.getElementsByTagName("card")
+		card.class = "card-test";
+		card.display = "block";
+		card.innerHTML = "Web Component Works!!";
+		var host = document.querySelector('.container');
+  		var root = host.createShadowRoot();
+  		root.innerHTML = 'Use me as a Web Component';
+		document.createElement('float-action-button');
+			function setComments() {
+				name = document.getElementById('name').value;
+				newvalue = document.getElementById('post').value;
+				newvalue2 = document.getElementById('address').value;
+				newvalue3 = document.getElementById('description').value;
+				currentvalue = document.getElementById('comments').innerHTML;
+				document.getElementById('comments').innerHTML= currentvalue + " Name:" +  name + "<br>" + " Post name: " + newvalue + "<br>" + "Address: " + newvalue2 + "<br>" + " Description: " + "<br>" + newvalue3 +  "<hr>" ;
+			}
+			function setFontFamily(){
+				selectElement = document.getElementById('fontfamily');
+				selectedIndex = selectElement.selectedIndex;
+				selectedValue = selectElement.options[selectedIndex].text;
+				//alert("Set the page font to " + selectedValue + "?");
+				var post = document.getElementById('post');
+				post.style.fontFamily = selectedValue;
+				var address = document.getElementById('address');
+				address.style.fontFamily = selectedValue;
+				var description = document.getElementById('description');
+				description.style.fontFamily = selectedValue;
+				var comments = document.getElementById('comments');
+				comments.style.fontFamily = selectedValue;
+				var name = document.getElementById('name');
+				name.style.fontFamily = selectedValue;
+				var submitbtn = document.getElementById('submitbtn');
+				submitbtn.style.fontFamily = selectedValue;
+				var fontset = document.getElementById('fontset');
+				fontset.style.fontFamily = selectedValue;
+				var namep = document.getElementById('namep');
+				namep.style.fontFamily = selectedValue;
+				var body = document.getElementById('body');
+				body.style.fontFamily = selectedValue;
+			}
+			function fontConfirmation() {
+				selectElement = document.getElementById('fontfamily');
+				selectedIndex = selectElement.selectedIndex;
+				selectedValue = selectElement.options[selectedIndex].text;
+               			var retVal = confirm("Do you want to set page font to " + selectedValue + "?");
+               
+				if( retVal == true ){
+                  
+					setFontFamily();
+                  
+					return true;
+               
+				}
+ else {               
+                  
+					return false;
+
+				}
+			}
+			function showAbout(){
+				alert("In Picatch, before you post, or do anything, hide something anywhere around the world(but don't put it in lakes, marshes , oceans, or any bodies of water). Then say your post name of it, where it is(address), and the description of it. After someone find's it, they can send you a picture of it(but in the description, add your email address). Have fun Picatching!");
+			}
+			var floatActionButton = document.getElementsByTagName(‘float-action-button’);
+			function morphIntoX() {
+				floatActionButton.class = ‘float-x-button’;
+				floatActionButton.innerHTML = ‘<i class=”material-icons”>close</i>’;
+};
+		</script>
+	</head>
+	<body>	
+	<div id="body">
+		<!--You can use the Custom Element 'card' (without the quotes)!!!! I made them-->
+		<nav>
+			<i class="material-icons menu-icon">menu</i>
+			<span>Home</span>
+			
+			<span><i class="material-icons more-icon">more_vert</i></span>
+			<i class="material-icons more-icon second-icon">favorite</i>
+			<i class="material-icons more-icon second-icon">search</i>
+
+		</nav>
+		<header align="center">
+			<br>
+			<br>
+			<br>
+			<br>
+			<img src = "https://docs.google.com/a/fcpsschools.net/drawings/d/1adCaJJsjC8FviVJDIMJkxy34zpeeQGEG2HMaLrR_RzE/pub?w=960&h=720" width ="400px"height = "300 px">
+			<hr> 
+		</header>
+			<div align="right">
+				<input class="question" id="about" type="submit" onclick="javascript:showAbout();" value="?"/>
+			</div>
+			<div>
+				<p id="namep">Name:<p>
+				<textarea rows="1" cols="10" id="name" style="resize: none;" placeholder="Name Here"></textarea>
+			</div>
+			<div align="center">
+				<textarea rows="5" cols="10" id="post" style="resize: none;" placeholder="New post (Name)"></textarea> 
+				<textarea rows="5" cols="10" id="address" style="resize: none;" placeholder="Address"></textarea> 
+				<textarea rows="5" cols="30" id="description" style="resize:none;" placeholder="Description"></textarea>
+				<hr>
+			</div>
+			<div>
+				<input id="submitbtn" type="submit" onclick="javascript:setComments();"/>
+			</div>
+			<div id="comments"></div>
+		
+		<template>
+			<div class="card">Use me as a Web Component</div>
+		</template>
+		<script>
+  			// Grab our template full of slider markup and styles
+  			var tmpl = document.querySelector('template');
+
+ 			// Create a prototype for a new element that extends HTMLElement
+  			var cardProto = Object.create(HTMLElement.prototype);
+
+  			// Setup our Shadow DOM and clone the template
+  			cardProto.createdCallback = function() {
+    				var root = this.createShadowRoot();
+    				root.appendChild(document.importNode(tmpl.content, true));
+  			};
+
+ 			// Register our new element
+  			var Card = document.registerElement('card', {
+   			prototype: cardProto
+  			});
+			
+		</script>
+		<!--You can use the Custom Element 'card' (without the quotes)!!!! I made them-->
+		<card>(post will be here)</card>
+		<!--<card>I am the newest HTML Custom Element, made by Ken!!!!</card>
+		<div class="card">I'm plain old boring HTML.</div>
+		<card>oops!</card>
+		<card>This my element!!!</card>
+		<card>I'm the card element!!</card>
+		<card>You can only use me in this HTML document!!</card>
+		<card>I'm Ken's son!!</card>
+		<card>Ken's a WIZARD!!!!!!!!</card>
+		<card>I mean a developer</card>
+		<card>I knew my dad is a big wig!!</card>
+		<card>Sorry, I'm so excited I can't stop talking!!!!!!!!!!</card>
+		<card>Just, use me as a component.</card>
+		<card>Let's show Dad</card>-->
+		<float-action-button onClick=”javascript:morphIntoX();”><i class="material-icons">add</i></float-action-button>
+	</div>
+	</body>
+</html>
