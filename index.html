@@ -150,6 +150,7 @@
 			box-shadow:0 2px 10px rgba(0,0,0,0.15);
 			cursor:pointer!important;
 			user-select:none;
+			transition: box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 			}
 			float-action-button i {
 			display:inline;
@@ -157,19 +158,31 @@
 			vertical-align:middle;
 			margin:16px;
 			color:white;
+			
 			}
-			.question{
-			border-radius=50%
+			float-action-button:hover {
+			box-shadow:0 3px 8px 0 rgba(0,0,0,.2)
+			}
+
+			float-action-button.float-button-x {
+			animation-name:change-into-x;
+			animation-duration:0.2s;
+			}
+			
+			@keyframes change-into-x {
+			0%{
+			background-color:#0091EA;
+			color:white;
+			}
+			100%{
+			background-color:#E0E0E0;
+			color:424242;
+			transform:rotate(45deg);
+			}
 			}
 			</style>
 		<script type="text/javascript">
-		var card = document.getElementsByTagName("card")
-		card.class = "card-test";
-		card.display = "block";
-		card.innerHTML = "Web Component Works!!";
-		var host = document.querySelector('.container');
-  		var root = host.createShadowRoot();
-  		root.innerHTML = 'Use me as a Web Component';
+		
 		document.createElement('float-action-button');
 			function setComments() {
 				name = document.getElementById('name').value;
@@ -223,13 +236,21 @@
 				}
 			}
 			function showAbout(){
-				alert("In Picatch, before you post, or do anything, hide something anywhere around the world(but don't put it in lakes, marshes , oceans, or any bodies of water). Then say your post name of it, where it is(address), and the description of it. After someone find's it, they can send you a picture of it(but in the description, add your email address). Have fun Picatching!");
+				alert("In Picatch, before you post, or do anything, hide something anywhere around the world(but don't put it in lakes, marshes , oceans, or any bodies of water). Then say your post name of it, where it is(address), and the description of it. After someone finds it, they can send you a picture of it(but in the description, add your email address). Have fun Picatching!");
 			}
-			var floatActionButton = document.getElementsByTagName(‘float-action-button’);
-			function morphIntoX() {
-				floatActionButton.class = ‘float-x-button’;
-				floatActionButton.innerHTML = ‘<i class=”material-icons”>close</i>’;
-};
+			function scrollToDiv(){
+				document.getElementById('name').scrollIntoView();
+				
+			}
+			
+			function floatChangeButton(){
+				var a = document.getElementsByTagName('float-action-button');
+				if(a && a.length){
+					a[0].className = 'float-button-x';
+				} else {
+					console.error("boom");
+				}	
+			}
 		</script>
 	</head>
 	<body>	
@@ -259,7 +280,7 @@
 				<p id="namep">Name:<p>
 				<textarea rows="1" cols="10" id="name" style="resize: none;" placeholder="Name Here"></textarea>
 			</div>
-			<div align="center">
+			<div align="center" id="postdiv">
 				<textarea rows="5" cols="10" id="post" style="resize: none;" placeholder="New post (Name)"></textarea> 
 				<textarea rows="5" cols="10" id="address" style="resize: none;" placeholder="Address"></textarea> 
 				<textarea rows="5" cols="30" id="description" style="resize:none;" placeholder="Description"></textarea>
@@ -268,35 +289,23 @@
 			<div>
 				<input id="submitbtn" type="submit" onclick="javascript:setComments();"/>
 			</div>
-			<div id="comments"></div>
+			<card id="comments"></card>
 		
-		<template>
+		<template id="template1">
 			<div class="card">Use me as a Web Component</div>
 		</template>
+
 		<script>
-  			// Grab our template full of slider markup and styles
-  			var tmpl = document.querySelector('template');
 
- 			// Create a prototype for a new element that extends HTMLElement
-  			var cardProto = Object.create(HTMLElement.prototype);
-
-  			// Setup our Shadow DOM and clone the template
-  			cardProto.createdCallback = function() {
-    				var root = this.createShadowRoot();
-    				root.appendChild(document.importNode(tmpl.content, true));
-  			};
-
- 			// Register our new element
-  			var Card = document.registerElement('card', {
-   			prototype: cardProto
-  			});
+ 			
+  			document.createElement('card');
 			
 		</script>
 		<!--You can use the Custom Element 'card' (without the quotes)!!!! I made them-->
 		<card>(post will be here)</card>
 		<!--<card>I am the newest HTML Custom Element, made by Ken!!!!</card>
 		<div class="card">I'm plain old boring HTML.</div>
-		<card>oops!</card>
+		<card>Poopsy whoops!</card>
 		<card>This my element!!!</card>
 		<card>I'm the card element!!</card>
 		<card>You can only use me in this HTML document!!</card>
@@ -307,7 +316,9 @@
 		<card>Sorry, I'm so excited I can't stop talking!!!!!!!!!!</card>
 		<card>Just, use me as a component.</card>
 		<card>Let's show Dad</card>-->
-		<float-action-button onClick=”javascript:morphIntoX();”><i class="material-icons">add</i></float-action-button>
+		
+				
+		<float-action-button onClick="javascript:floatChangeButton();"><i class="material-icons">add</i></float-action-button>			
 	</div>
 	</body>
 </html>
