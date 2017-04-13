@@ -164,19 +164,27 @@
 			box-shadow:0 3px 8px 0 rgba(0,0,0,.2)
 			}
 
-			float-action-button.float-button-x {
+			.float-button-x {
 			animation-name:change-into-x;
 			animation-duration:0.2s;
+			background-color:#E0E0E0;
+			color:#424242;
+			transform:rotate(45deg);
+			}
+			
+			.float-button-x i {
+			color:#424242;
 			}
 			
 			@keyframes change-into-x {
 			0%{
 			background-color:#0091EA;
 			color:white;
+transform:rotate(0deg);
 			}
 			100%{
 			background-color:#E0E0E0;
-			color:424242;
+			color:#424242;
 			transform:rotate(45deg);
 			}
 			}
@@ -322,3 +330,5 @@
 	</div>
 	</body>
 </html>
+ 
+
