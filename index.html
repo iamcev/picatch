@@ -39,7 +39,7 @@
 			width:300px;
 			height:75px;
 			}
-			input{
+			button{
 			border:2px solid #f4c20d;
 			background-color:#f4c20d;
 			color:white;
@@ -47,9 +47,9 @@
 			padding:3px;
 			font-size:100% 
 			}
-			input:hover {
+			button:hover {
 			box-shadow:2px 3px 3px gray;
-			rotate(20deg);
+			
 			}
 			.card {
 			background-color:white; 
@@ -87,7 +87,7 @@
 			transition:box-shadow 0.2s;
 			}
 			card:hover {
-			box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 2px rgba(0,0,0,.16);
+			box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,.15);
 			}
 			header {
 			background-color:#FFC107;
@@ -164,7 +164,7 @@
 			box-shadow:0 3px 8px 0 rgba(0,0,0,.2)
 			}
 
-			.float-button-x {
+			float-action-button.float-button-x {
 			animation-name:change-into-x;
 			animation-duration:0.2s;
 			background-color:#E0E0E0;
@@ -172,21 +172,56 @@
 			transform:rotate(45deg);
 			}
 			
-			.float-button-x i {
-			color:#424242;
-			}
-			
 			@keyframes change-into-x {
-			0%{
+			from{
 			background-color:#0091EA;
 			color:white;
-transform:rotate(0deg);
 			}
-			100%{
+			to{
 			background-color:#E0E0E0;
 			color:#424242;
 			transform:rotate(45deg);
 			}
+			}
+			
+			.float-button-x i {
+			color:#424242;
+			}
+
+			input {
+			border: none!important;
+			border-bottom:#9E9E9E 1px solid!important;
+			margin:16px;
+			transition:border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+			}
+			
+			input:focus {
+			border: none!important;
+			border-bottom:#4285F4 2px solid!important;
+			outline:none!important;
+			transition:border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			}
+			
+			input:focus::placeholder {
+			color:#4285F4;
+			position:relative!important;
+			padding:0!important;
+			margin:0!important;
+			top:-1em!important;
+			transition: color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			transition:top 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			}
+
+			input:focus::placeholder::after{
+    			position: absolute;
+    			top:-1em;
+    			left:0;
+    			content:attr(placeholder)!important;
+    			pointer-events: none!important;
+    			opacity:1!important;
+			z-index:1!important;
+			display:block!important;
+			
 			}
 			</style>
 		<script type="text/javascript">
@@ -204,7 +239,7 @@ transform:rotate(0deg);
 				selectElement = document.getElementById('fontfamily');
 				selectedIndex = selectElement.selectedIndex;
 				selectedValue = selectElement.options[selectedIndex].text;
-				//alert("Set the page font to " + selectedValue + "?");
+				alert("Set the page font to " + selectedValue + "?");
 				var post = document.getElementById('post');
 				post.style.fontFamily = selectedValue;
 				var address = document.getElementById('address');
@@ -250,7 +285,31 @@ transform:rotate(0deg);
 				document.getElementById('name').scrollIntoView();
 				
 			}
-			
+			function setFontFamily(){
+				selectElement = document.getElementById('fontfamily');
+				selectedIndex = selectElement.selectedIndex;
+				selectedValue = selectElement.options[selectedIndex].text;
+				//alert("Set the page font to " + selectedValue + "?");
+				var post = document.getElementById('post');
+				post.style.fontFamily = selectedValue;
+				var address = document.getElementById('address');
+				address.style.fontFamily = selectedValue;
+				var description = document.getElementById('description');
+				description.style.fontFamily = selectedValue;
+				var comments = document.getElementById('comments');
+				comments.style.fontFamily = selectedValue;
+				var name = document.getElementById('name');
+				name.style.fontFamily = selectedValue;
+				var submitbtn = document.getElementById('submitbtn');
+				submitbtn.style.fontFamily = selectedValue;
+				var fontset = document.getElementById('fontset');
+				fontset.style.fontFamily = selectedValue;
+				var namep = document.getElementById('namep');
+				namep.style.fontFamily = selectedValue;
+				var body = document.getElementById('body');
+				body.style.fontFamily = selectedValue;
+			}
+
 			function floatChangeButton(){
 				var a = document.getElementsByTagName('float-action-button');
 				if(a && a.length){
@@ -259,6 +318,7 @@ transform:rotate(0deg);
 					console.error("boom");
 				}	
 			}
+		
 		</script>
 	</head>
 	<body>	
@@ -278,11 +338,18 @@ transform:rotate(0deg);
 			<br>
 			<br>
 			<br>
+			<select id="fontfamily" name="fontfamily">
+					<option>Verdana</option>
+					<option>Arial</option>
+					<option>Sans-serif</option>
+					<option>Roboto</option>
+				</select>
+				<input id="fontset" type="submit" value= “Set page font” />
 			<img src = "https://docs.google.com/a/fcpsschools.net/drawings/d/1adCaJJsjC8FviVJDIMJkxy34zpeeQGEG2HMaLrR_RzE/pub?w=960&h=720" width ="400px"height = "300 px">
 			<hr> 
 		</header>
 			<div align="right">
-				<input class="question" id="about" type="submit" onclick="javascript:showAbout();" value="?"/>
+				<button class="question" id="about" type="submit" onclick="javascript:showAbout();" value="?"/>
 			</div>
 			<div>
 				<p id="namep">Name:<p>
@@ -295,9 +362,9 @@ transform:rotate(0deg);
 				<hr>
 			</div>
 			<div>
-				<input id="submitbtn" type="submit" onclick="javascript:setComments();"/>
+				<button id="submitbtn" type="submit" onclick="javascript:setComments();"/>
 			</div>
-			<card id="comments"></card>
+			<card id="comments">Note from creator: Hello, all! If you don’t know about picatch, go to the top right, then go down a little, and you will see a button with ‘?’ on it. There, you can know what to do. Anyway, I will thank the co-creator a thanks. And my dad. Yeah, my dad is the whole reason you can see what to do (also, all the buttons you see). You still want to know how I named it, right? Well, short for picture is pic, and catch pictures when you find the thing that you, catch. So, pic-catch. Just 1 ‘c’, though. The end. <hr></card>
 		
 		<template id="template1">
 			<div class="card">Use me as a Web Component</div>
@@ -325,7 +392,8 @@ transform:rotate(0deg);
 		<card>Just, use me as a component.</card>
 		<card>Let's show Dad</card>-->
 		
-				
+		<input placeholder="test" type="text"/>	
+		<input placeholder="Tell me your password!!!" type="password" />	
 		<float-action-button onClick="javascript:floatChangeButton();"><i class="material-icons">add</i></float-action-button>			
 	</div>
 	</body>
