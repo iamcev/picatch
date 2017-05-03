@@ -1,15 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
 		<title>Picatch!</title>
-		<link rel="shortcut icon" href="https://docs.google.com/a/fcpsschools.net/drawings/d/19wBBoA2lCJZJi_6OP_yOlpqoLuhhkSUV4NX7KPH4rFs/pub?w=166&h=165">
+		<link rel="shortcut icon" href="https://docs.google.com/a/fcpsschools.net/drawings/d/1DBSerg92aW-YgMi0dM5xZ1mNGfghlzL8uTRbcm1MRA0/pub?w=480&amp;h=360">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-blue.min.css" /> 
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<style>
 			body {
-			font-family:"Roboto",sans-serif;
+			font-family:"Roboto", sans-serif;
 			margin:0; 
+			background-color:#ffffff;
+			width:100%;
 			}
-			select{
+			.body {
+			width:100%;
+			}
+			/*select{
 			background-color:#f4c20d;
 			border:1px solid #f4c20d;
 			}
@@ -20,7 +30,7 @@
 			}
 			@keyframes textareahover{
 			from {background-color:white; border:2px solid white;}
-			to {background-color:#f4c20d; border:2px solid #f4c20d;}
+			to {background-color:#f4c20d; border:2px solid #ffc107;}
 			}
 			textarea{
 			color:#f4c20d;
@@ -38,19 +48,8 @@
 			animation-direction:alternate;
 			width:300px;
 			height:75px;
-			}
-			button{
-			border:2px solid #f4c20d;
-			background-color:#f4c20d;
-			color:white;
-			border-radius:2px;
-			padding:3px;
-			font-size:100% 
-			}
-			button:hover {
-			box-shadow:2px 3px 3px gray;
+			}*/
 			
-			}
 			.card {
 			background-color:white; 
 			width: 10em;
@@ -59,21 +58,6 @@
 			0 0 0 1px rgba(0,0,0,0.15); 
 			padding: 16px;
 			border-radius: 2px;
-			}
-			button {
-			box-shadow:0 2px 2px 0 rgba(0,0,0,0.15);
-			background-color: #FFB300;
-			border:none;
-			border-radius:2px;
-			color: white;
-			padding: 7px;
-			transition:box-shadow 0.2s;
-			margin:16px;
-			}
-			button:hover {
-			box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
-			animation-name:textareahover;
-			animation-duration:4s;
 			}
 			card {
 			background-color:white; 
@@ -93,9 +77,9 @@
 			background-color:#FFC107;
 			margin:0;
 			}
-			nav {
+			/*nav {
 			background-color:#FFA000;
-			max-width:100%;
+			width:100%;
 			height:56px;
 			color:white;
 			padding-left:16px;
@@ -131,7 +115,7 @@
 			float:right;
 			margin:16px;
 			margin-top:0;
-			}
+			}*/
 			.second-icon {
 			margin-right:0!important;
 			padding-right:0!important;
@@ -188,42 +172,310 @@
 			color:#424242;
 			}
 
-			input {
+			/*input {
 			border: none!important;
 			border-bottom:#9E9E9E 1px solid!important;
-			margin:16px;
-			transition:border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+			margin:16px!important;
+			position:absolute;
+			transition:border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			width:15em;
 			}
 			
 			input:focus {
 			border: none!important;
 			border-bottom:#4285F4 2px solid!important;
 			outline:none!important;
-			transition:border 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			transition:all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			}*/
+			@media(min-width:1200px){
+			::-webkit-scrollbar-thumb{
+			background-color:rgba(0,0,0,0.2)!important;
 			}
 			
-			input:focus::placeholder {
-			color:#4285F4;
-			position:relative!important;
-			padding:0!important;
-			margin:0!important;
-			top:-1em!important;
-			transition: color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
-			transition:top 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)!important;
+			::-webkit-scrollbar-track{
+			background:transparent;
+			width:0!important;
 			}
 
-			input:focus::placeholder::after{
-    			position: absolute;
-    			top:-1em;
-    			left:0;
-    			content:attr(placeholder)!important;
-    			pointer-events: none!important;
-    			opacity:1!important;
-			z-index:1!important;
-			display:block!important;
-			
+			::-webkit-scrollbar{
+			z-index:3!important;
+			width:7px!important;
+			background:transparent;
+			}
+
+			}
+			#passwordmessage {
+			position:relative;
+			}
+			#body {
+			margin:0!important;
+			width:100%;
+			}
+			#checkpassword {
+			display:block;
+			margin:16px!important;
+			position:static;
+			}
+
+			#vaultlink {
+			display:none;
+			}
+
+			nav-drawer{
+			display:block;
+			height:100px;
+			background-color:#ffc107;			
+			top:0;
+			left:0;
+			position:absolute;
+			top:0;
+			left:0;
+			}
+
+			#appbar {
+			height:56px;
+			}
+
+			@keyframes progressload {
+			0%{
+			value: 0;
+			}
+			50%{
+			value:50;
+			}
+			100%{
+			value: 100;
+			}
+			}
+
+			progress {
+			animation-name:progressload;
+			animation-duration:3s;
+			value:100;
+			}
+
+			::selection{
+			background-color:#ff69b4;
+			}
+
+			gcse:search input {
+
+			max-width:20em!important;
+			}
+
+			.demo-layout {
+			background-color:#FFC107;
+			}
+
+			.is-small-screen header{
+			display:block;
 			}
 			</style>
+		
+	</head>
+	<body>	
+	<div id="body">
+		<template id="navDrawerTmpl">
+			<div class="nav-drawer">
+				Welcome to the Picatch post page
+			</div>
+		</template>
+		
+		
+
+		<!-- Uses a header that scrolls with the text, rather than staying
+  		locked at the top -->
+		<div class="mdl-layout mdl-js-layout">
+  			<header class="mdl-layout__header mdl-layout__header--fixed-header">
+			<div class="mdl-layout__icon"></div>
+    				<div class="mdl-layout__header-row" style="padding-right:0;" style="background-color:#FFC107;">
+      					<!-- Title -->
+      					<span class="mdl-layout-title">Title</span>
+      					<!-- Add spacer, to align navigation to the right -->
+      					<div class="mdl-layout-spacer"></div>
+      					<!-- Navigation -->
+      					<nav class="mdl-navigation">
+        					
+						<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--accent">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+      <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+      <input class="mdl-textfield__input" type="text" id="sample6">
+      <label class="mdl-textfield__label" for="sample-expandable">Search</label>
+    </div>
+  </div>
+</form>
+						<!-- Right aligned menu below button -->
+						<button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon" style="margin:16px;">
+						
+  							<i class="material-icons">more_vert</i>
+						</button>
+
+						<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+  							<li class="mdl-menu__item" id="about" onclick="javascript:document.getElementById('aboutpicatch').showModal();">About Picatch</li>
+  							<li class="mdl-menu__item">What's New</li>
+  							<li class="mdl-menu__item">Send feedback</li>
+  							<li class="mdl-menu__item">Settings</li>
+						</ul>
+      					</nav>
+    				</div>
+  			</header>
+  			<div class="mdl-layout__drawer">
+    				<span class="mdl-layout-title">Hub</span>
+    				<nav class="mdl-navigation">
+    		 	 		<a class="mdl-navigation__link" href="">Link</a>
+      					<a class="mdl-navigation__link" href="">Link</a>
+      					<a class="mdl-navigation__link" href="">Link</a>
+      					<a class="mdl-navigation__link" href="">Link</a>
+    				</nav>
+  			</div>
+			
+			
+  			<main class="mdl-layout__content">
+   		 		<div class="page-content">
+					
+			<p class="product-sans" style>google_logo Product Sans google_G</p>
+
+			<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			
+				<input rows="1" cols="10" id="name" class="mdl-textfield__input" style="resize:none;"></input>
+				<label class="mdl-textfield__label" for="name">Name</label>	
+			</div>
+			</form>
+			<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			
+				<input class="mdl-textfield__input" id="post"></textarea>
+				<label for="post" class="mdl-textfield__label">Post Name</label>
+				
+				
+			
+			</div>
+			</form>
+			<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<textarea id="address" class="mdl-textfield__input" style="resize:none;"></textarea>
+				<label for="address" class="mdl-textfield__label">Address</label> 
+			</div>
+			</form>
+			<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<textarea id="description" class="mdl-textfield__input" style="resize:none;"></textarea>
+				<label for="description" class="mdl-textfield__label">Description</label>
+			</div>
+			</form>
+			<div>
+				<button id="submitbtn" type="submit" onclick="javascript:setComments();">
+					<i class="material-icons">send</i>
+					<span style="height:24px;line-height:24px;vertical-align:middle;">Submit</span>
+				</button>
+			</div>
+			
+			<card id="comments">Note from creator: Hello, all! If you don’t know about picatch, go to the top right, then go down a little, and you will see a button with ‘?’ on it. There, you can know what to do. Anyway, I will thank the co-creator a thanks. And my dad. Yeah, my dad is the whole reason you can see what to do (also, all the buttons you see). You still want to know how I named it, right? Well, short for picture is pic, and catch pictures when you find the thing that you, catch. So, pic-catch. Just 1 ‘c’, though. The end. <hr></card>
+		
+
+		<script>
+
+ 			
+  			document.createElement('card');
+			
+		</script>
+		<!--You can use the Custom Element 'card' (without the quotes)!!!! I made them-->
+		<card>(post will be here)</card>
+		<!--<card>I am the newest HTML Custom Element, made by Ken!!!!</card>
+		<div class="card">I'm plain old boring HTML.</div>
+		<card>Poopsy whoops!</card>
+		<card>This my element!!!</card>
+		<card>I'm the card element!!</card>
+		<card>You can only use me in this HTML document!!</card>
+		<card>I'm Ken's son!!</card>
+		<card>Ken's a WIZARD!!!!!!!!</card>
+		<card>I mean a developer</card>
+		<card>I knew my dad is a big wig!!</card>
+		<card>Sorry, I'm so excited I can't stop talking!!!!!!!!!!</card>
+		<card>Just, use me as a component.</card>
+		<card>Let's show Dad</card>-->
+		
+		
+		
+		<div>	
+			<div class="placeholder" align="center"><p><u>Vault</u></p></div>
+			
+		</div>
+		<input type="text" placeholder="Test"/>
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="password" id="password" name="password">
+				<label class="mdl-textfield__label" for="password">Password</label>
+			</div>
+		</form>
+		<br>
+		<br>	
+		<button type="button" id="showhidepassword" value="show" onClick="javascript:showHide();">Show</button>
+		<br>
+		<br>
+		<button onClick="javascript:scanPassword();" id="checkpassword">Check password</button>
+		<label>This is a &lt;progress&gt; element</label>
+		<progress max="100"></progress>	
+		<float-action-button onClick="javascript:floatChangeButton();"><i class="material-icons">add</i></float-action-button>	
+		<p id="passwordmessage"></p>
+		<card id="selectoptions"></card>
+		<!-- Accent-colored raised button with ripple -->
+		<!-- Expandable Textfield -->
+
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  			material design lite button
+		</button>
+		<dialog class="mdl-dialog" id="aboutpicatch">
+    			<h4 class="mdl-dialog__title">About Us</h4>
+    			<div class="mdl-dialog__content">
+      				<p>
+        				Picatch is an app dedicated to bring you happiness through a game of exciting, worldwide geocaching. Try making a post. Hide a cache anywhere (but not in private property, hazardous locations, etc.) and give us your name, the name of your post, a broad location, and a short description. Have fun Picatching!!
+      				</p>
+    			</div>
+			
+    			<div class="mdl-dialog__actions">
+      				<button type="button" class="mdl-button" onclick="javascript:document.getElementById('aboutpicatch').close();">Close</button>
+    			</div>
+  		</dialog>
+		<div>
+			<script>
+  				(function() {
+    					var cx = '016411228584268127196:qexsji4xv5i';
+    					var gcse = document.createElement('script');
+    					gcse.type = 'text/javascript';
+    					gcse.async = true;
+    					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    					var s = document.getElementsByTagName('script')[0];
+    					s.parentNode.insertBefore(gcse, s);
+  				})();
+			</script>
+			<gcse:search></gcse:search>
+		</div>
+		<form action="#">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input type="text" id="inputtest">
+				<label class="mdl-textfield__label" for="inputtest">Input</label>
+			</div>
+		</form>
+		<div id="tt1" class="icon material-icons">add</div>
+		
+		<div class="mdl-tooltip" data-mdl-for="tt1">
+			Follow
+		</div>
+		<label for="radio1" class="mdl-radio mdl-js-radio">
+  <input type="radio" id="radio1" name="flash" value="on" class="mdl-radio__button">
+  <span class="mdl-radio__label">Always on</span>
+</label>
+		<!-- MDL Spinner Component with Single Color -->
+		<div class="mdl-spinner mdl-js-spinner is-active"></div>
+		
+				</div>
+  			</main>
+		</div>
 		<script type="text/javascript">
 		
 		document.createElement('float-action-button');
@@ -272,14 +524,14 @@
 					return true;
                
 				}
- else {               
+				 else {               
                   
 					return false;
 
 				}
 			}
 			function showAbout(){
-				alert("In Picatch, before you post, or do anything, hide something anywhere around the world(but don't put it in lakes, marshes , oceans, or any bodies of water). Then say your post name of it, where it is(address), and the description of it. After someone finds it, they can send you a picture of it(but in the description, add your email address). Have fun Picatching!");
+				alert("Picatch is an app dedicated to bring happiness to you by a game of worldwide geocaching. Try making a post. Hide something and give us your name, a short description of your cache, a broad location, and post! Have fun Picatching!");
 			}
 			function scrollToDiv(){
 				document.getElementById('name').scrollIntoView();
@@ -309,7 +561,37 @@
 				var body = document.getElementById('body');
 				body.style.fontFamily = selectedValue;
 			}
+			function show() {
+   				var p = document.getElementById('password');
+    				p.setAttribute('type', 'text');
+   				var b = document.getElementById('showhidepassword');
+    				b.innerHTML = "Hide";
 
+			}
+
+			function hide() {
+			    	var p = document.getElementById('password');
+			    	p.setAttribute('type', 'password');
+   				var b = document.getElementById('showhidepassword');
+    				b.innerHTML = "Show";
+
+			}
+
+			var pwShown = 0;
+
+			function showHide() {
+				if (pwShown == 0) {
+					//alert('show');
+        				pwShown = 1;
+        				show();
+    				} else {
+					//alert('hide');
+        				pwShown = 0;
+        				hide();
+    				}
+			}
+
+			
 			function floatChangeButton(){
 				var a = document.getElementsByTagName('float-action-button');
 				if(a && a.length){
@@ -318,85 +600,68 @@
 					console.error("boom");
 				}	
 			}
-		
-		</script>
-	</head>
-	<body>	
-	<div id="body">
-		<!--You can use the Custom Element 'card' (without the quotes)!!!! I made them-->
-		<nav>
-			<i class="material-icons menu-icon">menu</i>
-			<span>Home</span>
 			
-			<span><i class="material-icons more-icon">more_vert</i></span>
-			<i class="material-icons more-icon second-icon">favorite</i>
-			<i class="material-icons more-icon second-icon">search</i>
+			function scanPassword(){
+				var passwordEl = document.getElementById('password');
+				var password = passwordEl.value;
+				var passwordMessageEl = document.getElementById('passwordmessage');
+				var vaultLinkEl = document.getElementById('vaultlink');
+				if (password == "i'mThePassword"){
+					passwordMessageEl.innerHTML='Correct!! You unlocked the vault of code!!';
+					passwordMessageEl.style.backgroundColor = '#C8E6C9';
+					passwordMessageEl.style.color = '#4CAF50';
+					vaultLinkEl.style.display = 'block';
+					vaultLinkEl.scrollIntoView();
+				}
+				if (password === null){
+					passwordMessageEl.innerHTML = 'Reload the page and enter a password.';
+				} 
+				else {
+					passwordMessageEl.innerHTML="Boom you are dead!!Reload the page to try again (but you won't get it right!)";
+					passwordMessageEl.style.color = '#F44336';
+					passwordMessageEl.style.backgroundColor = '#FFCDD2';
+					console.error('boom');
+					passwordMessageEl.scrollIntoView();
+				}
+			}
+			
+			
+			var navDrawerTmpl = document.getElementById('navDrawerTmpl');
 
-		</nav>
-		<header align="center">
-			<br>
-			<br>
-			<br>
-			<br>
-			<select id="fontfamily" name="fontfamily">
-					<option>Verdana</option>
-					<option>Arial</option>
-					<option>Sans-serif</option>
-					<option>Roboto</option>
-				</select>
-				<input id="fontset" type="submit" value= “Set page font” />
-			<img src = "https://docs.google.com/a/fcpsschools.net/drawings/d/1adCaJJsjC8FviVJDIMJkxy34zpeeQGEG2HMaLrR_RzE/pub?w=960&h=720" width ="400px"height = "300 px">
-			<hr> 
-		</header>
-			<div align="right">
-				<button class="question" id="about" type="submit" onclick="javascript:showAbout();" value="?"/>
-			</div>
-			<div>
-				<p id="namep">Name:<p>
-				<textarea rows="1" cols="10" id="name" style="resize: none;" placeholder="Name Here"></textarea>
-			</div>
-			<div align="center" id="postdiv">
-				<textarea rows="5" cols="10" id="post" style="resize: none;" placeholder="New post (Name)"></textarea> 
-				<textarea rows="5" cols="10" id="address" style="resize: none;" placeholder="Address"></textarea> 
-				<textarea rows="5" cols="30" id="description" style="resize:none;" placeholder="Description"></textarea>
-				<hr>
-			</div>
-			<div>
-				<button id="submitbtn" type="submit" onclick="javascript:setComments();"/>
-			</div>
-			<card id="comments">Note from creator: Hello, all! If you don’t know about picatch, go to the top right, then go down a little, and you will see a button with ‘?’ on it. There, you can know what to do. Anyway, I will thank the co-creator a thanks. And my dad. Yeah, my dad is the whole reason you can see what to do (also, all the buttons you see). You still want to know how I named it, right? Well, short for picture is pic, and catch pictures when you find the thing that you, catch. So, pic-catch. Just 1 ‘c’, though. The end. <hr></card>
-		
-		<template id="template1">
-			<div class="card">Use me as a Web Component</div>
-		</template>
+			var navDrawerProto = Object.create(HTMLElement.prototype);
+			navDrawerProto.createdCallback = function(){
+				var root = this.createShadowRoot();
+				root.appendChild(document.importNode(navDrawerTmpl.content,true));
+			};
+			var navDrawer = document.registerElement('nav-drawer',{
+				prototype: navDrawerProto
+			});
+			
+ 			var button = document.createElement('button');
+  			var textNode = document.createTextNode('Click Me!');
+  			button.appendChild(textNode);
+  			button.className = 'mdl-button mdl-js-button mdl-js-ripple-effect';
+  			componentHandler.upgradeElement(button);
+  			document.getElementById('container').appendChild(button);
+			
+			
+			var dialog = document.querySelector('dialog');
+			
+			var aboutButton = document.querySelector('#about');
+			
+			aboutButtion.addEventListener('click', function(){
+				dialog.open();
+			});
 
-		<script>
-
- 			
-  			document.createElement('card');
 			
 		</script>
 		<!--You can use the Custom Element 'card' (without the quotes)!!!! I made them-->
-		<card>(post will be here)</card>
-		<!--<card>I am the newest HTML Custom Element, made by Ken!!!!</card>
-		<div class="card">I'm plain old boring HTML.</div>
-		<card>Poopsy whoops!</card>
-		<card>This my element!!!</card>
-		<card>I'm the card element!!</card>
-		<card>You can only use me in this HTML document!!</card>
-		<card>I'm Ken's son!!</card>
-		<card>Ken's a WIZARD!!!!!!!!</card>
-		<card>I mean a developer</card>
-		<card>I knew my dad is a big wig!!</card>
-		<card>Sorry, I'm so excited I can't stop talking!!!!!!!!!!</card>
-		<card>Just, use me as a component.</card>
-		<card>Let's show Dad</card>-->
 		
-		<input placeholder="test" type="text"/>	
-		<input placeholder="Tell me your password!!!" type="password" />	
-		<float-action-button onClick="javascript:floatChangeButton();"><i class="material-icons">add</i></float-action-button>			
+		
+			
 	</div>
 	</body>
 </html>
+
  
 
